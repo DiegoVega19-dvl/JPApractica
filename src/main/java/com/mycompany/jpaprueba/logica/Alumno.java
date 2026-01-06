@@ -4,20 +4,33 @@
  */
 package com.mycompany.jpaprueba.logica;
 
+import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Basic;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
  * @author diego
  */
 @Entity
-public class Alumno {
+public class Alumno implements Serializable {
     
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private int id;
+    
+    @Basic
     private String nombre;
     private String apellido;
     private int edad;
+    
+    @Temporal(TemporalType.DATE)
     private Date fechaNaci;
     
     public Alumno(){

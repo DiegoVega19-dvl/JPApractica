@@ -4,6 +4,8 @@
 
 package com.mycompany.jpaprueba;
 
+import com.mycompany.jpaprueba.persistencia.ControladoraPersistencia;
+
 /**
  *
  * @author diego
@@ -11,7 +13,9 @@ package com.mycompany.jpaprueba;
 public class JPAprueba {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        
+        ControladoraPersistencia controlpersi = new ControladoraPersistencia();
+        
     }
 }
  
