@@ -59,7 +59,7 @@ public class AlumnoJpaController implements Serializable {
             String msg = ex.getLocalizedMessage();
             if (msg == null || msg.length() == 0) {
                 int id = alumno.getId(); // Cambia getId por tu llave primaria
-                if (findMiEntidad(id) == null) {
+                if (findAlumno(id) == null) {
                     throw new EntityNotFoundException("El registro con id " + id + " ya no existe.");
                 }
             }
@@ -72,7 +72,7 @@ public class AlumnoJpaController implements Serializable {
     }
 
     // --- MÉTODO ELIMINAR ---
-    public void destroy(Long id) throws EntityNotFoundException {
+    public void destroy(int id) throws EntityNotFoundException {
         EntityManager em = null;
         try {
             em = getEntityManager();
@@ -114,7 +114,7 @@ public class AlumnoJpaController implements Serializable {
         }
     }
 
-    public Alumno findMiEntidad(int id) {
+    public Alumno findAlumno(int id) {
         EntityManager em = getEntityManager();
         try {
             return em.find(Alumno.class, id);
