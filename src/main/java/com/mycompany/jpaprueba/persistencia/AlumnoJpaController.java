@@ -19,13 +19,13 @@ public class AlumnoJpaController implements Serializable {
     public AlumnoJpaController(EntityManagerFactory emf) {
         this.emf = emf;
     }
-    
-    public AlumnoJpaController(){
-    
-       emf = Persistence.createEntityManagerFactory("pruebJPAPU");
-    
+
+    public AlumnoJpaController() {
+
+        emf = Persistence.createEntityManagerFactory("pruebJPAPU");
+
     }
-            
+
     private EntityManagerFactory emf = null;
 
     public EntityManager getEntityManager() {

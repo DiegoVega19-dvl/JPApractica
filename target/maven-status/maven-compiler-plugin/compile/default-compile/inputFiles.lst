@@ -1,5 +1,6 @@
 /home/diego/Desktop/JPAprueba/src/main/java/com/mycompany/jpaprueba/JPAprueba.java
 /home/diego/Desktop/JPAprueba/src/main/java/com/mycompany/jpaprueba/logica/Alumno.java
+/home/diego/Desktop/JPAprueba/src/main/java/com/mycompany/jpaprueba/logica/Controladora.java
 /home/diego/Desktop/JPAprueba/src/main/java/com/mycompany/jpaprueba/persistencia/AlumnoJpaController.java
 /home/diego/Desktop/JPAprueba/src/main/java/com/mycompany/jpaprueba/persistencia/ControladoraPersistencia.java
 /home/diego/Desktop/JPAprueba/src/main/java/com/mycompany/jpaprueba/persistencia/exceptions/IllegalOrphanException.java
