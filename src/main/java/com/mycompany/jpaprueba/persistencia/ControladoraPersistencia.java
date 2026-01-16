@@ -5,6 +5,7 @@
 package com.mycompany.jpaprueba.persistencia;
 
 import com.mycompany.jpaprueba.logica.Alumno;
+import com.mycompany.jpaprueba.logica.Carrera;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +16,7 @@ import java.util.List;
 public class ControladoraPersistencia {
 
     AlumnoJpaController alujpa = new AlumnoJpaController();
+    CarreraJpaController carrejpa = new CarreraJpaController();
 
     public void crearAlumno(Alumno alu) {
         alujpa.create(alu);
@@ -41,9 +43,40 @@ public class ControladoraPersistencia {
 
     public ArrayList<Alumno> traerListaAlumno() {
         List<Alumno> lista = alujpa.findMiEntidadEntities();
-        ArrayList<Alumno> listaAlumno = new ArrayList <Alumno>(lista);
+        ArrayList<Alumno> listaAlumno = new ArrayList<Alumno>(lista);
 
         return listaAlumno;
+    }
+
+    // metodos de carrera
+    public void crearCarrera(Carrera carr) {
+        carrejpa.create(carr);
+    }
+
+    public void eliminarCarrera(int id) {
+        carrejpa.destroy(id);
+
+    }
+
+    public void editarCarrera(Carrera carr) {
+
+        try {
+            carrejpa.edit(carr);
+        } catch (Exception ex) {
+            System.getLogger(ControladoraPersistencia.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
+
+    }
+
+    public Carrera traerCarrera(int id) {
+        return carrejpa.findCarrera(id);
+    }
+
+    public ArrayList<Carrera> traerListaCarrera() {
+        List<Carrera> lista = carrejpa.findMiCarreraEntities();
+        ArrayList<Carrera> listaCarrera = new ArrayList<Carrera>(lista);
+
+        return listaCarrera;
     }
 
 }

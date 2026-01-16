@@ -4,7 +4,7 @@
  */
 package com.mycompany.jpaprueba.persistencia;
 
-import com.mycompany.jpaprueba.logica.Alumno;
+import com.mycompany.jpaprueba.logica.Carrera;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -14,13 +14,13 @@ import javax.persistence.EntityNotFoundException;
 import javax.persistence.Persistence;
 import javax.persistence.criteria.CriteriaQuery;
 
-public class AlumnoJpaController implements Serializable {
+public class CarreraJpaController implements Serializable {
 
-    public AlumnoJpaController(EntityManagerFactory emf) {
+    public CarreraJpaController(EntityManagerFactory emf) {
         this.emf = emf;
     }
 
-    public AlumnoJpaController() {
+    public CarreraJpaController() {
 
         emf = Persistence.createEntityManagerFactory("pruebJPAPU");
 
@@ -33,12 +33,12 @@ public class AlumnoJpaController implements Serializable {
     }
 
     // --- MÉTODO CREAR ---
-    public void create(Alumno alumno) {
+    public void create(Carrera carrera) {
         EntityManager em = null;
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            em.persist(alumno);
+            em.persist(carrera);
             em.getTransaction().commit();
         } finally {
             if (em != null) {
@@ -48,18 +48,18 @@ public class AlumnoJpaController implements Serializable {
     }
 
     // --- MÉTODO EDITAR ---
-    public void edit(Alumno alumno) throws Exception {
+    public void edit(Carrera carrera) throws Exception {
         EntityManager em = null;
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            alumno = em.merge(alumno);
+            carrera = em.merge(carrera);
             em.getTransaction().commit();
         } catch (Exception ex) {
             String msg = ex.getLocalizedMessage();
             if (msg == null || msg.length() == 0) {
-                int id = alumno.getId(); // Cambia getId por tu llave primaria
-                if (findAlumno(id) == null) {
+                int id = carrera.getId(); // Cambia getId por tu llave primaria
+                if (findCarrera(id) == null) {
                     throw new EntityNotFoundException("El registro con id " + id + " ya no existe.");
                 }
             }
@@ -77,14 +77,14 @@ public class AlumnoJpaController implements Serializable {
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            Alumno alumno;
+            Carrera carrera;
             try {
-                alumno = em.getReference(Alumno.class, id);
-                alumno.getId();
+                carrera = em.getReference(Carrera.class, id);
+                carrera.getId();
             } catch (EntityNotFoundException enfe) {
                 throw new EntityNotFoundException("El registro con id " + id + " no existe.");
             }
-            em.remove(alumno);
+            em.remove(carrera);
             em.getTransaction().commit();
         } finally {
             if (em != null) {
@@ -94,15 +94,15 @@ public class AlumnoJpaController implements Serializable {
     }
 
     // --- MÉTODOS DE CONSULTA (READ) ---
-    public List<Alumno> findMiEntidadEntities() {
-        return findMiEntidadEntities(true, -1, -1);
+    public List<Carrera> findMiCarreraEntities() {
+        return findMiCarreraEntities(true, -1, -1);
     }
 
-    private List<Alumno> findMiEntidadEntities(boolean all, int maxResults, int firstResult) {
+    private List<Carrera> findMiCarreraEntities(boolean all, int maxResults, int firstResult) {
         EntityManager em = getEntityManager();
         try {
             CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
-            cq.select(cq.from(Alumno.class));
+            cq.select(cq.from(Carrera.class));
             Query q = em.createQuery(cq);
             if (!all) {
                 q.setMaxResults(maxResults);
@@ -114,10 +114,10 @@ public class AlumnoJpaController implements Serializable {
         }
     }
 
-    public Alumno findAlumno(int id) {
+    public Carrera findCarrera(int id) {
         EntityManager em = getEntityManager();
         try {
-            return em.find(Alumno.class, id);
+            return em.find(Carrera.class, id);
         } finally {
             em.close();
         }

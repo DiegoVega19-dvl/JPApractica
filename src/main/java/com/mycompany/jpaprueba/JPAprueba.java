@@ -4,8 +4,8 @@
 package com.mycompany.jpaprueba;
 
 import com.mycompany.jpaprueba.logica.Alumno;
+import com.mycompany.jpaprueba.logica.Carrera;
 import com.mycompany.jpaprueba.logica.Controladora;
-import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -18,25 +18,18 @@ public class JPAprueba {
 
         Controladora control = new Controladora();
 
-        //Alumno alu = new Alumno(03, "Ana", "todocode", 25, new Date());
-        //control.crearAlumno(alu);
-        //control.eliminarAlumno(1);
-        /*alu.setApellido("de Paula");
-        control.editarAlumno(alu);*/
-        Alumno alu = control.traerAlumno(2);
-        System.out.println("busqueda individual");
-        System.out.println(">>>>>>>>>>>>>>>>>>>>>");
-        System.out.println("el alumno es: " + alu.toString());
-        
-        System.out.println("-------------------------------------------------");
+        Carrera carre = new Carrera(01, "sistemas");
+        control.crearCarrera(carre);
 
-        System.out.println("busqueda grupal");
-        ArrayList<Alumno> listaAlumno = control.traerListaAlumno();
+        Alumno alu2 = new Alumno(06, "Luisina", "todocode", 30, new Date(), carre);
+        control.crearAlumno(alu2);
 
-        for (Alumno lis : listaAlumno) {
+        Alumno al = control.traerAlumno(06);
 
-            System.out.println(lis.toString());
-        }
+        System.out.println("-----------------------------------");
+        System.out.println("------- DATOS DEL ALUMNO ----------");
+        System.out.println("Alumno: " + al.getNombre() + " " + al.getApellido());
+        System.out.println("Carrera en curso: " + al.getCarrera().getNombre());
 
     }
 }

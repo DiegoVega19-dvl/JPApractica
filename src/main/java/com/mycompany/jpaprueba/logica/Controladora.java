@@ -37,12 +37,40 @@ public class Controladora {
 
         return controlPersis.traerAlumno(id);
     }
-    
-    public ArrayList <Alumno> traerListaAlumno(){
-    
-        return controlPersis.traerListaAlumno();
-    
-    }
-;
 
+    public ArrayList<Alumno> traerListaAlumno() {
+
+        return controlPersis.traerListaAlumno();
+
+    }
+
+    //// metodos carrera
+    
+    public void crearCarrera(Carrera carr) {
+
+        controlPersis.crearCarrera(carr);
+    }
+
+    public void eliminarCarrera(int id) {
+
+        controlPersis.eliminarCarrera(id);
+
+    }
+
+    public void editarCarrera(Carrera carr) {
+
+        controlPersis.editarCarrera(carr);
+
+    }
+
+    public Carrera traerCarrera(int id) {
+
+        return controlPersis.traerCarrera(id);
+    }
+
+    public ArrayList<Carrera> traerListaCarrera() {
+
+        return controlPersis.traerListaCarrera();
+
+    }
 }

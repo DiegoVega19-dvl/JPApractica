@@ -1,8 +1,10 @@
 com/mycompany/jpaprueba/logica/Controladora.class
 com/mycompany/jpaprueba/logica/Alumno.class
+com/mycompany/jpaprueba/logica/Carrera.class
 com/mycompany/jpaprueba/persistencia/exceptions/PreexistingEntityException.class
 com/mycompany/jpaprueba/persistencia/AlumnoJpaController.class
 com/mycompany/jpaprueba/persistencia/exceptions/IllegalOrphanException.class
+com/mycompany/jpaprueba/persistencia/CarreraJpaController.class
 com/mycompany/jpaprueba/persistencia/ControladoraPersistencia.class
 com/mycompany/jpaprueba/persistencia/exceptions/NonexistentEntityException.class
 com/mycompany/jpaprueba/JPAprueba.class
