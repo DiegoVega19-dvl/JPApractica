@@ -2,9 +2,11 @@
 /home/diego/Desktop/JPAprueba/src/main/java/com/mycompany/jpaprueba/logica/Alumno.java
 /home/diego/Desktop/JPAprueba/src/main/java/com/mycompany/jpaprueba/logica/Carrera.java
 /home/diego/Desktop/JPAprueba/src/main/java/com/mycompany/jpaprueba/logica/Controladora.java
+/home/diego/Desktop/JPAprueba/src/main/java/com/mycompany/jpaprueba/logica/Materia.java
 /home/diego/Desktop/JPAprueba/src/main/java/com/mycompany/jpaprueba/persistencia/AlumnoJpaController.java
 /home/diego/Desktop/JPAprueba/src/main/java/com/mycompany/jpaprueba/persistencia/CarreraJpaController.java
 /home/diego/Desktop/JPAprueba/src/main/java/com/mycompany/jpaprueba/persistencia/ControladoraPersistencia.java
+/home/diego/Desktop/JPAprueba/src/main/java/com/mycompany/jpaprueba/persistencia/MateriaJpaController.java
 /home/diego/Desktop/JPAprueba/src/main/java/com/mycompany/jpaprueba/persistencia/exceptions/IllegalOrphanException.java
 /home/diego/Desktop/JPAprueba/src/main/java/com/mycompany/jpaprueba/persistencia/exceptions/NonexistentEntityException.java
 /home/diego/Desktop/JPAprueba/src/main/java/com/mycompany/jpaprueba/persistencia/exceptions/PreexistingEntityException.java

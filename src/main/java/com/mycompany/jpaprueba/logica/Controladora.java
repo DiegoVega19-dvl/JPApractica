@@ -6,7 +6,6 @@ package com.mycompany.jpaprueba.logica;
 
 import com.mycompany.jpaprueba.persistencia.ControladoraPersistencia;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
@@ -71,6 +70,38 @@ public class Controladora {
     public ArrayList<Carrera> traerListaCarrera() {
 
         return controlPersis.traerListaCarrera();
+
+    }
+
+    ////////// METODOS MATERIA
+  
+    
+    
+    public void crearMateria(Materia mate) {
+
+        controlPersis.crearMateria(mate);
+    }
+
+    public void eliminarMateria(int id) {
+
+        controlPersis.eliminarMateria(id);
+
+    }
+
+    public void editarMateria(Materia mate) {
+
+        controlPersis.editarMateria(mate);
+
+    }
+
+    public Materia traerMateria(int id) {
+
+        return controlPersis.traerMateria(id);
+    }
+
+    public ArrayList<Materia> traerListaMateria() {
+
+        return controlPersis.traerListaMateria();
 
     }
 }

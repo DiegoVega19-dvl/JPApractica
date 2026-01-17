@@ -6,6 +6,7 @@ package com.mycompany.jpaprueba.persistencia;
 
 import com.mycompany.jpaprueba.logica.Alumno;
 import com.mycompany.jpaprueba.logica.Carrera;
+import com.mycompany.jpaprueba.logica.Materia;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,6 +18,7 @@ public class ControladoraPersistencia {
 
     AlumnoJpaController alujpa = new AlumnoJpaController();
     CarreraJpaController carrejpa = new CarreraJpaController();
+    MateriaJpaController matejpa = new MateriaJpaController();
 
     public void crearAlumno(Alumno alu) {
         alujpa.create(alu);
@@ -77,6 +79,37 @@ public class ControladoraPersistencia {
         ArrayList<Carrera> listaCarrera = new ArrayList<Carrera>(lista);
 
         return listaCarrera;
+    }
+
+    // metodos de materia
+    public void crearMateria(Materia mate) {
+        matejpa.create(mate);
+    }
+
+    public void eliminarMateria(int id) {
+        matejpa.destroy(id);
+
+    }
+
+    public void editarMateria(Materia mate) {
+
+        try {
+            matejpa.edit(mate);
+        } catch (Exception ex) {
+            System.getLogger(ControladoraPersistencia.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
+
+    }
+
+    public Materia traerMateria(int id) {
+        return matejpa.findMateria(id);
+    }
+
+    public ArrayList<Materia> traerListaMateria() {
+        List<Materia> lista = matejpa.findMiMateriaEntities();
+        ArrayList<Materia> listaMateria = new ArrayList<Materia>(lista);
+
+        return listaMateria;
     }
 
 }
